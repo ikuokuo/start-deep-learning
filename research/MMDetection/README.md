@@ -10,16 +10,24 @@
 conda create -n open-mmlab python=3.7 -y
 conda activate open-mmlab
 
-conda install pytorch==1.7.0 torchvision==0.8.1 cudatoolkit=10.2 -c pytorch -y
+conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.2 -c pytorch -y
 
 # install the latest mmcv
-pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.7.0/index.html
+pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.6.0/index.html
 
 # install mmdetection
 git clone https://github.com/open-mmlab/mmdetection.git
 cd mmdetection
 pip install -r requirements/build.txt
 pip install -v -e .
+```
+
+Install with `pytorch==1.7.0` (not recommended now because of train error with multi gpu, see this issue: https://github.com/pytorch/pytorch/issues/47050),
+
+```bash
+conda install pytorch==1.7.0 torchvision==0.8.1 cudatoolkit=10.2 -c pytorch -y
+
+pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.7.0/index.html
 ```
 
 - [MMDetection - Installation](https://mmdetection.readthedocs.io/en/latest/get_started.html#installation)
@@ -260,6 +268,7 @@ data = dict(
 
 # Modify schedule related settings
 optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001)
+total_epochs = 12
 
 # We can use the pre-trained model to obtain higher performance
 # load_from = 'checkpoints/*.pth'
@@ -282,11 +291,32 @@ configs/voc_cat/faster_rcnn_r50_fpn_1x_voc_cat.py \
 --work-dir _train_voc_cat
 ```
 
+Resume the training process that is interrupted accidentally,
+
+```bash
+bash ./tools/dist_train.sh \
+configs/voc_cat/faster_rcnn_r50_fpn_1x_voc_cat.py \
+2 \
+--work-dir _train_voc_cat \
+--resume-from _train_voc_cat/epoch_100.pth
+```
+
 Solution `ModuleNotFoundError: No module named 'pycocotools'`:
 
 ```bash
 pip uninstall pycocotools mmpycocotools
 pip install mmpycocotools
+```
+
+#### Plot training loss
+
+```bash
+pip install seaborn
+
+python tools/analyze_logs.py plot_curve \
+_train_voc_cat/*.log.json \
+--keys loss_cls loss_bbox \
+--legend loss_cls loss_bbox
 ```
 
 #### Test and inference
