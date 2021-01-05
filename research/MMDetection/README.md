@@ -265,10 +265,14 @@ data = dict(
         img_prefix=data_root + 'VOC2012/JPEGImages/',
         classes=classes,
         ann_file=data_root + 'coco_voc2012_cat/annotations/instances_val.json'))
+evaluation = dict(interval=100)
 
 # Modify schedule related settings
 optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0001)
-total_epochs = 12
+total_epochs = 10000
+
+# Modify runtime related settings
+checkpoint_config = dict(interval=100)
 
 # We can use the pre-trained model to obtain higher performance
 # load_from = 'checkpoints/*.pth'
