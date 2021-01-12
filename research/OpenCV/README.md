@@ -6,3 +6,7 @@
   - [readNet()](https://docs.opencv.org/master/d6/d0f/group__dnn.html#ga3b34fe7a29494a6a4295c169a7d32422)
 
 > Support frameworks: Caffe, TensorFlow, Torch, Darknet, DLDT, ONNX
+
+## See also
+
+- [Start OpenCV](https://github.com/ikuokuo/start-opencv)
