@@ -8,6 +8,8 @@
 - [MMSkeleton](MMSkeleton/README.md)
 - [OpenCV](OpenCV/README.md)
 - [PaddlePaddle](PaddlePaddle/README.md)
+- [ScaledYOLOv4](ScaledYOLOv4/README.md)
+- [YOLOv5](YOLOv5/README.md)
 
 ## Benchmark
 
