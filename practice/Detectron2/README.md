@@ -2,8 +2,6 @@
 
 [Detectron2]: https://github.com/facebookresearch/detectron2
 
-> Support models: R-CNN, ...
-
 ## Installation
 
 - [Installation](https://detectron2.readthedocs.io/tutorials/install.html)
