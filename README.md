@@ -1,5 +1,9 @@
 # Start Deep Learning
 
+## Book
+
+- [Dive into Deep Learning](https://github.com/d2l-ai/), [Start🚀](https://github.com/ikuokuo/read-d2l)
+
 ## Practice
 
 - YOLO
