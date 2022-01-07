@@ -16,6 +16,8 @@
 - [OpenCV DNN](https://docs.opencv.org/5.x/d2/d58/tutorial_table_of_content_dnn.html), [Start🚀](https://github.com/ikuokuo/start-opencv)
 - StyleGAN
   - [JoJoGAN](https://github.com/mchong6/JoJoGAN), [Start📝](practice/JoJoGAN/README.md)
+- Matting
+  - [RobustVideoMatting](https://github.com/PeterL1n/RobustVideoMatting), [Start📝](practice/RVM/README.md)
 
 更多笔记：
 
