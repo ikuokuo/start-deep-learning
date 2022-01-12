@@ -4,6 +4,7 @@
 import argparse
 import os
 import sys
+from enum import Enum, auto
 from typing import Optional, Tuple
 
 import onnxruntime as ort
@@ -12,10 +13,16 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 
+class Precision(Enum):
+    FLOAT16 = auto()
+    FLOAT32 = auto()
+
+
 def _infer(model_path: str,
            input_image: str,
            input_resize: Optional[Tuple[int, int]] = None,
            output_image: Optional[str] = None,
+           precision: Precision = Precision.FLOAT16,
            do_show: bool = True) -> None:
     # Read input
     with Image.open(input_image) as img:
@@ -27,9 +34,13 @@ def _infer(model_path: str,
         plt.imshow(img)
         plt.show()
 
+    src_type = np.float16
+    if precision == Precision.FLOAT32:
+        src_type = np.float32
+
     # HWC [0,255] > BCHW [0,1]
     src = np.array(img)
-    src = np.moveaxis(src, -1, 0) .astype(np.float16)
+    src = np.moveaxis(src, -1, 0).astype(src_type)
     src = src[np.newaxis, :] / 255.
 
     # Load model
@@ -39,7 +50,7 @@ def _infer(model_path: str,
     io = sess.io_binding()
 
     # Create tensors on CUDA
-    rec = [ ort.OrtValue.ortvalue_from_numpy(np.zeros([1, 1, 1, 1], dtype=np.float16), 'cuda') ] * 4
+    rec = [ ort.OrtValue.ortvalue_from_numpy(np.zeros([1, 1, 1, 1], dtype=src_type), 'cuda') ] * 4
     downsample_ratio_value = auto_downsample_ratio(img.height, img.width)
     downsample_ratio = ort.OrtValue.ortvalue_from_numpy(np.asarray([downsample_ratio_value], dtype=np.float32), 'cuda')
 
@@ -92,6 +103,9 @@ def _parse_args():
     parser.add_argument('--input-image', type=str, required=True)
     parser.add_argument('--input-resize', type=int, default=None, nargs=2)
     parser.add_argument('--output-image', type=str)
+    parser.add_argument('--precision', type=str,
+        default=Precision.FLOAT16.name.lower(),
+        choices=tuple(p.name.lower() for p in Precision))
     parser.add_argument('--show', action='store_true')
 
     args = parser.parse_args()
@@ -104,11 +118,14 @@ def _parse_args():
         root, _ = os.path.splitext(args.input_image)
         args.output_image = f'{root}_com.png'
 
+    args.precision = Precision[args.precision.upper()]
+
     print('Args')
     print(f'  model: {args.model}')
     print(f'  input_image: {args.input_image}')
     print(f'  input_resize: {args.input_resize}')
     print(f'  output_image: {args.output_image}')
+    print(f'  precision: {args.precision}')
     print(f'  show: {args.show}')
 
     return args
@@ -121,6 +138,7 @@ def _main():
         input_image=args.input_image,
         input_resize=args.input_resize,
         output_image=args.output_image,
+        precision=args.precision,
         do_show=args.show
     )
 
