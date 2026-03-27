@@ -7,23 +7,26 @@
 ## Practice
 
 - YOLO
-  - [Darknet](https://github.com/pjreddie/darknet), [Start🚀](https://github.com/ikuokuo/start-yolov4)
-  - [ScaledYOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4), [Start🚀](https://github.com/ikuokuo/start-scaled-yolov4)
-  - [YOLOv5](https://github.com/ultralytics/yolov5), [Start📙](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data) ([coco2yolov5.py](https://github.com/ikuokuo/start-scaled-yolov4/blob/main/scripts/coco2yolov5.py))
-- [Detectron2](https://github.com/facebookresearch/detectron2), [Start📝](practice/Detectron2/README.md)
-- [MMDetection](https://github.com/open-mmlab/mmdetection), [Start📝](practice/MMDetection/README.md)
-- [MMSkeleton](https://github.com/open-mmlab/mmskeleton), [Start📝](practice/MMSkeleton/README.md)
-- [OpenCV DNN](https://docs.opencv.org/5.x/d2/d58/tutorial_table_of_content_dnn.html), [Start🚀](https://github.com/ikuokuo/start-opencv)
+  - 2020-02 / [OpenCV DNN](https://docs.opencv.org/5.x/d2/d58/tutorial_table_of_content_dnn.html), [Start🚀](https://github.com/ikuokuo/start-opencv/blob/master/docs/cpp/object_detection_yolo.md)
+  - 2020-08 / [Darknet](https://github.com/pjreddie/darknet), [Start🚀](https://github.com/ikuokuo/start-yolov4)
+  - 2021-01 / [ScaledYOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4), [Start🚀](https://github.com/ikuokuo/start-scaled-yolov4)
+  - 2021-01 / [YOLOv5](https://github.com/ultralytics/yolov5), [Start📙](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data) ([coco2yolov5.py](https://github.com/ikuokuo/start-scaled-yolov4/blob/main/scripts/coco2yolov5.py))
+- Detection
+  - 2021-01 / [Detectron2](https://github.com/facebookresearch/detectron2), [Start📝](practice/Detectron2/README.md)
+  - 2021-01 / [MMDetection](https://github.com/open-mmlab/mmdetection), [Start📝](practice/MMDetection/README.md)
+- Pose
+  - 2021-01 / [MMSkeleton](https://github.com/open-mmlab/mmskeleton), [Start📝](practice/MMSkeleton/README.md)
 - StyleGAN
-  - [JoJoGAN](https://github.com/mchong6/JoJoGAN), [Start📝](practice/JoJoGAN/README.md)
+  - 2022-01 / [JoJoGAN](https://github.com/mchong6/JoJoGAN), [Start📝](practice/JoJoGAN/README.md)
 - Matting
-  - [RobustVideoMatting](https://github.com/PeterL1n/RobustVideoMatting), [Start📝](practice/RVM/README.md)
-- [Transformer](https://arxiv.org/abs/1706.03762), [Start📝](practice/Transformer/README.md)
+  - 2022-01 / [RobustVideoMatting](https://github.com/PeterL1n/RobustVideoMatting), [Start📝](practice/RVM/README.md)
+- LLM
+  - 2026-02 / [Transformer](https://arxiv.org/abs/1706.03762), [开始📝](practice/Transformer/README.md)
 
 更多笔记：
 
-- [TorchVision](https://pytorch.org/vision/stable/index.html), [推理🚀](https://yyixx.com/docs/algo/torch/torchvision_model_inference/) [微调🚀](https://yyixx.com/docs/algo/torch/torchvision_fasterrcnn_finetuning)
-- [SoftRas](https://github.com/ShichenLiu/SoftRas), [开始🚀](https://yyixx.com/docs/algo/3d_recon/softras)
+- 2021-02 / [TorchVision](https://pytorch.org/vision/stable/index.html), [推理🚀](https://yyixx.com/docs/algo/torch/torchvision_model_inference/) [微调🚀](https://yyixx.com/docs/algo/torch/torchvision_fasterrcnn_finetuning)
+- 2021-06 / [SoftRas](https://github.com/ShichenLiu/SoftRas), [开始🚀](https://yyixx.com/docs/algo/3d_recon/softras)
 
 ## SOTA
 
