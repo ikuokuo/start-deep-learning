@@ -4,3 +4,8 @@
 /mmdetection/
 /mmskeleton/
 /RobustVideoMatting/
+/YOLO-Master/
+
+/*.pt
+/runs/
+/result/

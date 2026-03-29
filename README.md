@@ -11,6 +11,8 @@
   - 2020-08 / [Darknet](https://github.com/pjreddie/darknet), [Start🚀](https://github.com/ikuokuo/start-yolov4)
   - 2021-01 / [ScaledYOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4), [Start🚀](https://github.com/ikuokuo/start-scaled-yolov4)
   - 2021-01 / [YOLOv5](https://github.com/ultralytics/yolov5), [Start📙](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data) ([coco2yolov5.py](https://github.com/ikuokuo/start-scaled-yolov4/blob/main/scripts/coco2yolov5.py))
+  - 2026-03 / [YOLO-Master](https://github.com/Tencent/YOLO-Master), [开始📝](practice/YOLO-Master/README.md)
+  - 2026-03 / [YOLO26](https://docs.ultralytics.com/zh/models/yolo26/), [开始📝](practice/YOLO26/README.md)
 - Detection
   - 2021-01 / [Detectron2](https://github.com/facebookresearch/detectron2), [Start📝](practice/Detectron2/README.md)
   - 2021-01 / [MMDetection](https://github.com/open-mmlab/mmdetection), [Start📝](practice/MMDetection/README.md)
