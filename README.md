@@ -11,6 +11,7 @@
 ### Task & Model
 
 - LLM
+  - 2026-04 / [Rex-Omni](https://github.com/IDEA-Research/Rex-Omni), [开始📝](practice/Rex-Omni/README.md)
   - 2026-02 / [Transformer](https://arxiv.org/abs/1706.03762), [开始📝](practice/Transformer/README.md)
 - YOLO
   - 2026-03 / [YOLO26](https://docs.ultralytics.com/zh/models/yolo26/), [开始📝](practice/YOLO26/README.md)
