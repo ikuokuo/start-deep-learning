@@ -11,6 +11,7 @@
 ### Task & Model
 
 - LLM
+  - 2026-06 / [Falcon Perception](https://github.com/tiiuae/falcon-perception), [开始📝](practice/Falcon-Perception/README.md)
   - 2026-04 / [Rex-Omni](https://github.com/IDEA-Research/Rex-Omni), [开始📝](practice/Rex-Omni/README.md)
   - 2026-02 / [Transformer](https://arxiv.org/abs/1706.03762), [开始📝](practice/Transformer/README.md)
 - YOLO
