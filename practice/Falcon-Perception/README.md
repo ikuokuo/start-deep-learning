@@ -105,6 +105,34 @@ Outdir : result
 
 ![](../../data/result/dog_falcon_perception.jpg)
 
+### Perception (HD)
+
+[Falcon Perception-HD](https://www.alphaxiv.org/abs/2608.18881) 是一个 RL 后训练全重，于 2026-08-19 提供的修订版。
+
+```bash
+cd start-deep-learning/
+export HF_ENDPOINT=https://hf-mirror.com
+# unset all_proxy ALL_PROXY
+
+# 上述命令加上版本 `--hf-revision 19-08-2026`
+python practice/Falcon-Perception/perception.py \
+--image "data/dog.jpg" --task detection --query "dog" --out-dir result \
+--dtype bfloat16 --max-image-size 256 --max-seq-length 2048 \
+--flex-attn-safe --no-cudagraph \
+--hf-revision 19-08-2026
+
+# 或者，先下载再运行
+curl -LsSf https://hf.co/cli/install.sh | bash
+hf download tiiuae/Falcon-Perception --revision 19-08-2026 --local-dir ./falcon_hd
+
+unset all_proxy ALL_PROXY && HF_HUB_OFFLINE=1 && \
+python practice/Falcon-Perception/perception.py \
+--image "data/dog.jpg" --task detection --query "dog" --out-dir result \
+--dtype bfloat16 --max-image-size 256 --max-seq-length 2048 \
+--flex-attn-safe --no-cudagraph \
+-hf_local_dir ./falcon_hd
+```
+
 ### OCR (text extraction)
 
 #### ocr_plain
